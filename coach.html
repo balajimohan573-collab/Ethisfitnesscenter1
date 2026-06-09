@@ -149,13 +149,288 @@ footer p{font-size:0.78rem;color:var(--muted);}
   section{padding:4rem 1.5rem;}
   .champ-grid{grid-template-columns:1fr;}
 }
+
+
+/* --- Professional polish additions --- */
+:root{
+  --fg: var(--white);
+  --fg2: rgba(255,255,255,0.72);
+  --fg3: rgba(255,255,255,0.42);
+  --border-col: rgba(255,255,255,0.08);
+  --nav-bg: rgba(8,8,8,0.90);
+}
+body{
+  background:
+    radial-gradient(circle at top left, rgba(255,45,107,0.10), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(255,107,0,0.08), transparent 28%),
+    var(--deep);
+  color: var(--fg);
+}
+nav{
+  gap: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.28);
+}
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.nav-chip,
+.hero-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:0.45rem;
+  padding:0.55rem 0.9rem;
+  border-radius:999px;
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  border:1px solid var(--border-col);
+  background:rgba(255,255,255,0.04);
+  color:var(--fg);
+}
+.nav-chip i,
+.hero-chip i{font-size:0.78rem;}
+.call-btn,
+.hero-call-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:0.55rem;
+  padding:0.72rem 1.15rem;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.05);
+  color:var(--white);
+  text-decoration:none;
+  font-size:0.8rem;
+  font-weight:700;
+  letter-spacing:0.5px;
+  transition:transform 0.2s,border-color 0.2s,background 0.2s;
+}
+.call-btn:hover,
+.hero-call-btn:hover{
+  transform:translateY(-2px);
+  border-color:rgba(255,45,107,0.45);
+  background:rgba(255,45,107,0.10);
+}
+.hero-actions{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-bottom:2.4rem;
+}
+.hero-wa{
+  padding:0.78rem 1.3rem !important;
+  font-size:0.84rem !important;
+  box-shadow:none !important;
+}
+.hero-call-btn{
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
+.hero-chip-row{
+  display:flex;
+  gap:0.75rem;
+  flex-wrap:wrap;
+  margin-bottom:1.6rem;
+}
+.hero-chip--since{
+  color:var(--lime);
+  border-color:rgba(200,255,0,0.28);
+  background:rgba(200,255,0,0.08);
+}
+.hero-chip--review{
+  color:#FFB649;
+  border-color:rgba(255,182,73,0.30);
+  background:rgba(255,182,73,0.08);
+  text-decoration:none;
+}
+.hero-bio,
+.section-sub,
+.skill-card p,
+.champ-card p,
+.cta-inner p,
+footer p{color:var(--fg2);}
+.skill-card,
+.champ-card,
+.cert-item,
+.pose-item,
+.float-badge,
+.stack-card{
+  box-shadow:0 18px 40px rgba(0,0,0,0.16);
+}
+.skill-card,
+.champ-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+}
+.cert-item:hover,
+.pose-item:hover,
+.champ-card:hover,
+.skill-card:hover{
+  box-shadow:0 24px 56px rgba(0,0,0,0.26);
+}
+.cta-btns a{
+  min-width:200px;
+  justify-content:center;
+}
+.cta-call-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.65rem;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.18);
+  color:var(--white);
+  padding:0.95rem 1.8rem;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:0.92rem;
+  letter-spacing:0.45px;
+  transition:transform 0.2s,border-color 0.2s,background 0.2s;
+}
+.cta-call-btn:hover{
+  transform:translateY(-2px);
+  border-color:rgba(255,45,107,0.4);
+  background:rgba(255,45,107,0.10);
+}
+footer{
+  background:rgba(3,3,3,0.92);
+  backdrop-filter:blur(14px);
+}
+@media(max-width:860px){
+  nav{
+    padding:1rem 1.25rem;
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .nav-actions{
+    width:100%;
+    justify-content:flex-start;
+  }
+  .nav-chip{display:none;}
+  .hero-actions a,
+  .cta-btns a{width:100%;}
+}
 </style>
+
+<style id="mobile-header-fix">
+  nav > *, header > *, .nav-actions > *, .header-actions > * { min-width: 0; }
+  .nav-logo, .header-brand { min-width: 0; }
+  .nav-logo, .header-logo { white-space: normal; }
+  #themeWrap, #themeCycleBtn { max-width: 100%; }
+  .mobile-pop-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.05);
+    color: var(--fg, var(--white));
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    transition: transform 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .mobile-pop-btn:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255,45,107,0.35);
+    background: rgba(255,45,107,0.08);
+  }
+  @media (max-width: 900px) {
+    nav, header {
+      gap: 0.8rem;
+      align-items: center;
+      position: relative;
+    }
+    .nav-logo, .header-logo {
+      font-size: clamp(1.2rem, 7vw, 1.5rem);
+      letter-spacing: 2px;
+      line-height: 0.95;
+    }
+    .mobile-pop-btn {
+      display: inline-flex;
+      margin-left: auto;
+      flex: 0 0 auto;
+    }
+    .nav-actions, .header-actions {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+      width: min(320px, calc(100vw - 2rem));
+      padding: 0.9rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: color-mix(in srgb, var(--card, #181818) 88%, transparent);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.22);
+      opacity: 0;
+      transform: translateY(-8px) scale(0.98);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 30;
+    }
+    nav.mobile-menu-open .nav-actions,
+    header.mobile-menu-open .header-actions {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .nav-actions > *, .header-actions > * {
+      width: 100%;
+      justify-content: flex-start;
+    }
+    #themeWrap { width: 100%; }
+    #themeCycleBtn {
+      width: 100%;
+      min-width: 0;
+      height: auto;
+      justify-content: flex-start;
+      padding: 0.72rem 0.95rem !important;
+      border-radius: 12px;
+      gap: 0.55rem !important;
+      box-shadow: none;
+    }
+    #themeCycleBtn span { display: inline; }
+    #themePanel {
+      right: 0 !important;
+      top: calc(100% + 8px) !important;
+      min-width: 230px !important;
+      max-width: min(260px, calc(100vw - 3rem));
+    }
+  }
+  @media (max-width: 600px) {
+    nav, header { padding: 0.9rem 1rem; }
+    .nav-logo, .header-logo {
+      font-size: clamp(1.05rem, 6.6vw, 1.25rem);
+      letter-spacing: 1.5px;
+    }
+    .nav-actions, .header-actions {
+      width: min(300px, calc(100vw - 1.25rem));
+      right: 0;
+    }
+  }
+</style>
+
 </head>
 <body>
 
 <nav>
   <div class="nav-logo">Ethis Fitness Center</div>
-  <a href="home.html" class="back-btn"><i class="fa fa-arrow-left" style="font-size:0.75rem;"></i> Back to Home</a>
+  <div class="nav-actions">
+    <span class="nav-chip"><i class="fa fa-calendar"></i> Since 2011</span>
+    <span class="nav-chip"><i class="fa fa-star"></i> 4.7 Rated Gym</span>
+    <a href="tel:+919444424363" class="call-btn"><i class="fa fa-phone"></i> Call Now</a>
+    <a href="home.html" class="back-btn"><i class="fa fa-arrow-left" style="font-size:0.75rem;"></i> Back to Home</a>
+  </div>
 </nav>
 
 <section class="hero" id="hero">
@@ -167,14 +442,14 @@ footer p{font-size:0.78rem;color:var(--muted);}
       <p class="hero-role">Certified Fitness Trainer &amp; Champion Athlete</p>
       <p class="hero-bio">Over 10 years of transforming lives through expert coaching, personalised training, and a deep commitment to every member's journey — from the very first rep to their greatest milestone. A decorated state, national and university-level champion in Body Building and Power Lifting.</p>
       <div class="cert-pill"><i class="fa fa-certificate"></i> P.G Diploma in Gym Instruction · Certified Trainer</div>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+      <div class="hero-actions">
         <a href="https://www.instagram.com/ethis_fitness_centre_cuddalore" target="_blank" class="insta-btn"><i class="fab fa-instagram"></i> Follow on Instagram</a>
-        <a href="https://wa.me/919444424363?text=Hi%20Coach%20Ethiraj!%20I%27d%20like%20to%20know%20more%20about%20training." target="_blank" class="btn-wa" style="padding:0.65rem 1.2rem;font-size:0.82rem;box-shadow:none;"><i class="fab fa-whatsapp"></i> Chat with Coach</a>
-        <a href="tel:+919444424363" style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:white;padding:0.65rem 1.2rem;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.82rem;letter-spacing:0.5px;">📞 Call Now</a>
+        <a href="https://wa.me/919444424363?text=Hi%20Coach%20Ethiraj!%20I%27d%20like%20to%20know%20more%20about%20training." target="_blank" class="btn-wa hero-wa"><i class="fab fa-whatsapp"></i> Chat with Coach</a>
+        <a href="tel:+919444424363" class="hero-call-btn"><i class="fa fa-phone"></i> Call Now</a>
       </div>
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.5rem;">
-        <span style="display:inline-flex;align-items:center;gap:0.4rem;background:rgba(200,255,0,0.1);border:1px solid rgba(200,255,0,0.3);color:#C8FF00;padding:0.3rem 0.9rem;border-radius:100px;font-size:0.72rem;font-weight:700;letter-spacing:1.5px;">🗓 Since 2011</span>
-        <a href="https://www.justdial.com/Cuddalore/Ethis-Fitness-Center-Near-By-Lena-Medical-Manjakkuppam/9999P4142-4142-180423140706-U6H1_BZDET" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,165,0,0.1);border:1px solid rgba(255,165,0,0.35);color:#FFAA00;padding:0.3rem 0.9rem;border-radius:100px;font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-decoration:none;">⭐ 4.7/5 · 251 Justdial Reviews</a>
+      <div class="hero-chip-row">
+        <span class="hero-chip hero-chip--since"><i class="fa fa-calendar"></i> Since 2011</span>
+        <a href="https://www.justdial.com/Cuddalore/Ethis-Fitness-Center-Near-By-Lena-Medical-Manjakkuppam/9999P4142-4142-180423140706-U6H1_BZDET" target="_blank" class="hero-chip hero-chip--review"><i class="fa fa-star"></i> 4.7/5 · 251 Justdial Reviews</a>
       </div>
       <div class="hero-stats">
         <div><div class="h-stat-num">10+</div><div class="h-stat-lbl">Years Training</div></div>
@@ -492,10 +767,10 @@ footer p{font-size:0.78rem;color:var(--muted);}
     <p>Book a free trial session, meet the coach, and take the first step towards the strongest version of yourself.</p>
     <div class="cta-btns">
       <a href="https://wa.me/919444424363?text=Hi%20Coach%20Ethiraj!%20I%27d%20like%20to%20book%20a%20free%20trial%20session." target="_blank" class="btn-wa"><i class="fab fa-whatsapp" style="font-size:1.1rem;"></i> Book Free Trial</a>
-      <a href="tel:+919444424363" style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:white;padding:0.95rem 1.8rem;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.95rem;letter-spacing:0.5px;">📞 Call Now</a>
+      <a href="tel:+919444424363" class="cta-call-btn"><i class="fa fa-phone"></i> Call Now</a>
 
-      <a href="tel:+91 98650 21117" style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:white;padding:0.95rem 1.8rem;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.95rem;letter-spacing:0.5px;">📞 +91 98650 21117</a>
-      <a href="index.html" class="btn-home"><i class="fa fa-home" style="font-size:0.9rem;"></i> Visit Ethis Fitness Center</a>
+      <a href="tel:+919865021117" class="cta-call-btn"><i class="fa fa-phone"></i> +91 98650 21117</a>
+      <a href="home.html" class="btn-home"><i class="fa fa-home" style="font-size:0.9rem;"></i> Back to Home</a>
     </div>
   </div>
 </section>
@@ -557,5 +832,335 @@ footer p{font-size:0.78rem;color:var(--muted);}
   });
 })();
 </script>
+
+<script>
+(function () {
+  var THEMES = {
+    dark: {
+      label: 'Dark Pro', icon: 'fa-moon', grad1: '#E8183C', grad2: '#D4480A',
+      vars: {
+        '--hot':'#E8183C','--electric':'#D4480A','--lime':'#A8D500',
+        '--deep':'#0C0C0E','--surface':'#131318','--card':'#1C1C24','--card2':'#16161D',
+        '--muted':'#7A7A8C','--white':'#FFFFFF','--fg':'#FFFFFF',
+        '--fg2':'rgba(255,255,255,0.72)','--fg3':'rgba(255,255,255,0.42)',
+        '--border-col':'rgba(255,255,255,0.09)','--nav-bg':'rgba(10,10,14,0.92)',
+        '--overlay':'rgba(10,10,14,0.86)'
+      }
+    },
+    light: {
+      label: 'Light Pro', icon: 'fa-sun', grad1: '#C0102A', grad2: '#A83000',
+      vars: {
+        '--hot':'#C0102A','--electric':'#A83000','--lime':'#567A00',
+        '--deep':'#F5F5F8','--surface':'#ECECF2','--card':'#FFFFFF','--card2':'#F2F2F7',
+        '--muted':'#4F4F63','--white':'#111111','--fg':'#111111',
+        '--fg2':'rgba(17,17,17,0.74)','--fg3':'rgba(17,17,17,0.46)',
+        '--border-col':'rgba(0,0,0,0.10)','--nav-bg':'rgba(255,255,255,0.92)',
+        '--overlay':'rgba(255,255,255,0.86)'
+      }
+    },
+    midnight: {
+      label: 'Midnight', icon: 'fa-star', grad1: '#8B5CF6', grad2: '#4F46E5',
+      vars: {
+        '--hot':'#8B5CF6','--electric':'#4F46E5','--lime':'#10B981',
+        '--deep':'#08081A','--surface':'#11112C','--card':'#17173B','--card2':'#12122F',
+        '--muted':'#9A99C0','--white':'#F2F1FF','--fg':'#F2F1FF',
+        '--fg2':'rgba(242,241,255,0.74)','--fg3':'rgba(242,241,255,0.44)',
+        '--border-col':'rgba(139,92,246,0.17)','--nav-bg':'rgba(8,8,26,0.93)',
+        '--overlay':'rgba(8,8,26,0.88)'
+      }
+    },
+    forest: {
+      label: 'Forest', icon: 'fa-leaf', grad1: '#10B981', grad2: '#0D9488',
+      vars: {
+        '--hot':'#10B981','--electric':'#0D9488','--lime':'#84CC16',
+        '--deep':'#07170F','--surface':'#0C2217','--card':'#123021','--card2':'#0E251A',
+        '--muted':'#82A892','--white':'#EEFFF4','--fg':'#EEFFF4',
+        '--fg2':'rgba(238,255,244,0.74)','--fg3':'rgba(238,255,244,0.42)',
+        '--border-col':'rgba(16,185,129,0.16)','--nav-bg':'rgba(7,23,15,0.93)',
+        '--overlay':'rgba(7,23,15,0.88)'
+      }
+    }
+  };
+
+  var ORDER = ['dark','light','midnight','forest'];
+  var current = localStorage.getItem('ethis-theme') || 'dark';
+
+  function applyTheme(name) {
+    var theme = THEMES[name] || THEMES.dark;
+    var root = document.documentElement;
+    Object.keys(theme.vars).forEach(function (key) {
+      root.style.setProperty(key, theme.vars[key]);
+    });
+    root.style.setProperty('--border', theme.vars['--border-col']);
+    root.setAttribute('data-theme', name);
+    current = name;
+    localStorage.setItem('ethis-theme', name);
+    updatePanel();
+  }
+
+  function injectCSS() {
+    if (document.getElementById('page-theme-overrides')) return;
+    var style = document.createElement('style');
+    style.id = 'page-theme-overrides';
+    style.textContent = `
+      html, body { background: var(--deep) !important; color: var(--fg) !important; }
+      body, p, .section-sub, .hero-bio, .gallery-hero p, .card-caption p, .lightbox-info p, footer p, .stat-lbl, .h-stat-lbl {
+        color: var(--fg2) !important;
+      }
+      nav, header {
+        background: var(--nav-bg) !important;
+        border-bottom-color: var(--border-col) !important;
+      }
+      .nav-logo, .header-logo, .footer-logo {
+        background: linear-gradient(90deg, var(--hot), var(--electric)) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+      .back-btn, .call-btn, .hero-call-btn, .cta-secondary, .filter-btn, #themeCycleBtn {
+        background: rgba(255,255,255,0.04) !important;
+        color: var(--fg) !important;
+        border-color: var(--border-col) !important;
+      }
+      .back-btn:hover, .call-btn:hover, .hero-call-btn:hover, .cta-secondary:hover, .filter-btn:hover, #themeCycleBtn:hover {
+        border-color: var(--hot) !important;
+        color: var(--fg) !important;
+      }
+      .filter-btn.active, .btn-wa, .insta-btn, .cta-wa {
+        background: linear-gradient(135deg, var(--hot), var(--electric)) !important;
+        color: #fff !important;
+        border-color: transparent !important;
+      }
+      .hero-tag, .gallery-hero-tag, .section-tag {
+        color: var(--hot) !important;
+        border-color: rgba(255,255,255,0.18) !important;
+      }
+      .skill-card, .champ-card, .cert-item, .pose-item, .media-card, .stats-strip, .bottom-cta, .float-badge, .lightbox-media, .site-footer {
+        background: var(--card) !important;
+        border-color: var(--border-col) !important;
+      }
+      .champ-card.featured, .media-card.featured, .bottom-cta, .cert-item:hover, .pose-item:hover, .media-card:hover {
+        box-shadow: 0 20px 60px rgba(0,0,0,0.22) !important;
+      }
+      .section-title, .gallery-hero h1, .hero-name, .bottom-cta h2, .cta-inner h2, h1, h2, h3 {
+        color: var(--fg) !important;
+      }
+      .card-caption, .pose-overlay, .cert-num, .hs-caption {
+        background: linear-gradient(to top, var(--overlay) 0%, rgba(0,0,0,0) 100%) !important;
+      }
+      .cat-badge, .nav-chip, .hero-chip, .header-badge, .review-badge {
+        border-color: var(--border-col) !important;
+        color: var(--fg) !important;
+        background: rgba(255,255,255,0.05) !important;
+      }
+      .lightbox, .lb-close, .lb-nav, .lightbox-close, .lightbox-nav {
+        border-color: var(--border-col) !important;
+      }
+      #themePanel {
+        background: var(--card) !important;
+        border-color: var(--border-col) !important;
+      }
+      .tp-card {
+        background: var(--card2) !important;
+        border-color: var(--border-col) !important;
+      }
+      .tp-card.active {
+        border-color: var(--hot) !important;
+        box-shadow: 0 0 0 1px var(--hot) inset !important;
+      }
+      .tp-name { color: var(--fg) !important; }
+      .tp-desc { color: var(--fg3) !important; }
+      .header-subtitle { color: var(--fg3) !important; }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function buildUI() {
+    var bar = document.querySelector('nav') || document.querySelector('header');
+    if (!bar || document.getElementById('themeCycleBtn')) return;
+
+    var target = bar.querySelector('.nav-actions, .header-actions') || bar;
+    var wrap = document.createElement('div');
+    wrap.id = 'themeWrap';
+    wrap.style.cssText = 'position:relative;display:inline-flex;align-items:center;flex-shrink:0;';
+
+    var btn = document.createElement('button');
+    btn.id = 'themeCycleBtn';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Switch theme');
+    btn.style.cssText = [
+      'display:inline-flex;align-items:center;gap:0.55rem;',
+      'padding:0.55rem 0.95rem;border-radius:10px;cursor:pointer;',
+      'font-size:0.76rem;font-weight:700;letter-spacing:0.4px;',
+      'border:1px solid;font-family:inherit;white-space:nowrap;'
+    ].join('');
+
+    var panel = document.createElement('div');
+    panel.id = 'themePanel';
+    panel.style.cssText = [
+      'position:absolute;top:calc(100% + 10px);right:0;z-index:9999;',
+      'display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;',
+      'min-width:260px;padding:1rem;border:1px solid;border-radius:16px;',
+      'opacity:0;transform:translateY(-8px) scale(0.98);pointer-events:none;',
+      'transition:opacity 0.2s ease,transform 0.2s ease;',
+      'box-shadow:0 20px 60px rgba(0,0,0,0.35);'
+    ].join('');
+
+    var title = document.createElement('div');
+    title.textContent = 'Choose Theme';
+    title.style.cssText = 'grid-column:1/-1;font-size:0.66rem;letter-spacing:2px;text-transform:uppercase;opacity:0.55;font-weight:800;';
+    panel.appendChild(title);
+
+    ORDER.forEach(function (name) {
+      var theme = THEMES[name];
+      var card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'tp-card';
+      card.dataset.theme = name;
+      card.style.cssText = [
+        'display:flex;flex-direction:column;gap:0.35rem;text-align:left;',
+        'padding:0.8rem;border-radius:12px;border:1.5px solid;cursor:pointer;font-family:inherit;'
+      ].join('');
+
+      var swatch = document.createElement('div');
+      swatch.style.cssText = 'display:flex;align-items:center;gap:0.45rem;';
+      var barSwatch = document.createElement('div');
+      barSwatch.style.cssText = 'width:34px;height:14px;border-radius:999px;background:linear-gradient(135deg,' + theme.grad1 + ',' + theme.grad2 + ');';
+      var icon = document.createElement('i');
+      icon.className = 'fas ' + theme.icon;
+      icon.style.cssText = 'font-size:0.75rem;color:' + theme.grad1 + ';';
+      swatch.appendChild(barSwatch);
+      swatch.appendChild(icon);
+
+      var nameEl = document.createElement('div');
+      nameEl.className = 'tp-name';
+      nameEl.style.cssText = 'font-size:0.82rem;font-weight:800;';
+      nameEl.textContent = theme.label;
+
+      var descEl = document.createElement('div');
+      descEl.className = 'tp-desc';
+      descEl.style.cssText = 'font-size:0.66rem;line-height:1.45;';
+      descEl.textContent = name === 'dark' ? 'Classic premium contrast'
+        : name === 'light' ? 'Clean bright appearance'
+        : name === 'midnight' ? 'Elegant purple ambience'
+        : 'Fresh green energy';
+
+      card.appendChild(swatch);
+      card.appendChild(nameEl);
+      card.appendChild(descEl);
+      card.addEventListener('click', function (e) {
+        e.stopPropagation();
+        applyTheme(name);
+        closePanel();
+      });
+      panel.appendChild(card);
+    });
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (panel.style.opacity === '1') closePanel(); else openPanel();
+    });
+
+    function openPanel() {
+      panel.style.opacity = '1';
+      panel.style.transform = 'translateY(0) scale(1)';
+      panel.style.pointerEvents = 'auto';
+    }
+    function closePanel() {
+      panel.style.opacity = '0';
+      panel.style.transform = 'translateY(-8px) scale(0.98)';
+      panel.style.pointerEvents = 'none';
+    }
+
+    document.addEventListener('click', closePanel);
+    panel.addEventListener('click', function (e) { e.stopPropagation(); });
+
+    wrap.appendChild(btn);
+    wrap.appendChild(panel);
+
+    var backBtn = target.querySelector('.back-btn');
+    if (backBtn) target.insertBefore(wrap, backBtn);
+    else target.prepend(wrap);
+  }
+
+  function updatePanel() {
+    var btn = document.getElementById('themeCycleBtn');
+    var theme = THEMES[current] || THEMES.dark;
+    if (btn) {
+      btn.innerHTML = '<i class="fas ' + theme.icon + '" style="color:' + theme.grad1 + ';"></i><span>' + theme.label + '</span>';
+    }
+    document.querySelectorAll('.tp-card').forEach(function (card) {
+      card.classList.toggle('active', card.dataset.theme === current);
+    });
+  }
+
+  injectCSS();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      buildUI();
+      applyTheme(current);
+    });
+  } else {
+    buildUI();
+    applyTheme(current);
+  }
+})();
+</script>
+
+<script>
+(function () {
+  function setupPopupMenu(barSelector, actionsSelector) {
+    var bar = document.querySelector(barSelector);
+    if (!bar) return;
+    var actions = bar.querySelector(actionsSelector);
+    if (!actions || bar.querySelector('.mobile-pop-btn')) return;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'mobile-pop-btn';
+    btn.setAttribute('aria-label', 'Open quick menu');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = '<i class="fas fa-ellipsis-v"></i>';
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = bar.classList.toggle('mobile-menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    actions.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (window.innerWidth > 900) return;
+      if (!bar.contains(e.target)) {
+        bar.classList.remove('mobile-menu-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900) {
+        bar.classList.remove('mobile-menu-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    bar.insertBefore(btn, actions);
+  }
+
+  function initPopupMenus() {
+    setupPopupMenu('nav', '.nav-actions');
+    setupPopupMenu('header', '.header-actions');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPopupMenus);
+  } else {
+    initPopupMenus();
+  }
+})();
+</script>
+
 </body>
 </html>
